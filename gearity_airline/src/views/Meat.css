@@ -1,0 +1,8 @@
+.background4{
+    width: 97%;
+    height: 600px;
+    padding: 2vh;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+}
