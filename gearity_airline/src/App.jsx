@@ -1,13 +1,16 @@
 
 import './App.css'
-import LoginPage from './views/LoginPage'
-import FlightSchedule from './views/FlightSchedule'
-import FlightDetail from './views/FlightDetail'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from './components/navbar';
+import HomePage from './views/Homepage';
 function App() {
   return (
-    <div className='page'>
-      <FlightSchedule></FlightSchedule>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navbar/>}></Route>
+        <Route path="/page" element={<HomePage/>}x></Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
