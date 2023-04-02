@@ -1,0 +1,30 @@
+.detail{
+    width: 170vh;
+    height: 70vh;
+   display: flex;
+   justify-content: center;
+}
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FE8F69;
+}
+.container-profile{
+    padding: 5vh;
+    width: 170vh;
+    height: 80vh;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+}
+.profile{
+    width: 50%;
+    height: 100%;
+}
+.profile-detail{
+  display: flex;
+    margin: 4vh;
+    font-size: 20px;
+    font-weight: bold;
+}

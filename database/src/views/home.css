@@ -1,0 +1,22 @@
+.container{
+    width: 170vh;
+    height: 80vh;
+    background-color: #FE8E68;;
+}
+.image{
+    background-color: red;
+    margin: 0;
+}
+.contents{
+    padding: 5vh;
+    margin: 0;
+
+}
+.go{
+    display: flex;
+    padding: 0;
+    margin-bottom: 3vh;
+}
+.back{
+    display: flex;
+}

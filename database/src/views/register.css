@@ -1,0 +1,38 @@
+.main{
+    padding-top: 10vh;
+    padding-left: 3vh;
+    padding-right: 4vh;
+    width: 170vh;
+    height: 80vh;
+    background-color: #FE8E68;
+    display: flex;
+    justify-content: space-between;
+}
+.left{
+
+    width: 80vh;
+    height: 70vh;
+
+
+}
+.top{
+    margin: 2.2vh;
+    width: 75vh;
+    height: 30vh;
+   background-image: linear-gradient(#FFFFFF, #FC8E68);
+   border-radius: 20px;
+}
+.bottom{
+    border-radius: 20px;
+    margin: 2.2vh;
+    width: 75vh;
+    height: 30vh;
+    background-image: linear-gradient(#FFFFFF, #FC8E68);
+}
+
+.right{
+    border-radius: 20px;
+    width: 80vh;
+    height: 70vh;
+    background-image: linear-gradient(#FFFFFF, #FC8E68);
+}

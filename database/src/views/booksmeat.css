@@ -1,0 +1,26 @@
+.hotdeal{
+    height: 35vh;
+    background: transparent;
+    margin-bottom: 10vh;
+}
+.containerT{
+    padding: 5vh;
+    width: 170vh;
+    height: 80vh;
+    background-color: #FE8E68;
+}
+.title{
+    padding-left: 50px;
+    background-color: #FF7A8B;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 10px;
+}
+.listCard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
