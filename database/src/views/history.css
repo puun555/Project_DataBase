@@ -1,0 +1,17 @@
+.head{
+    display: flex;
+    width: 98%;
+    height: 70px;
+    color: black;
+    margin: 2vh;
+    font-size: 50px;
+    font-weight: bold;
+    align-items: center;
+    border-bottom: 3px solid black;
+}
+.containerh{
+    padding: 5vh;
+    width: 170vh;
+    height: 80vh;
+    background-color: white;
+}
