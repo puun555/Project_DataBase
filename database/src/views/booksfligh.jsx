@@ -1,10 +1,12 @@
 import '../views/booksflight.css'
 import { Avatar, Button, Card, List, Skeleton } from 'antd';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Navbar from '../views/navbar';
 let count = 3;
-
+import axios from 'axios';
+import DataContext from '../views/Datacontext';
 import { useNavigate } from 'react-router-dom'
+
 const DummyData = [
     {
         "FlightID" :"123132313",
@@ -124,6 +126,18 @@ const DummyData = [
 ]
 
 const BooksFlight = () =>{
+    const [flight, setFlight] = useState([])
+    useEffect(()=>{
+        const fliterFlight = localStorage.getItem("flights")
+        console.log(JSON.parse(fliterFlight))
+        const filtered = JSON.parse(fliterFlight)
+        setFlight(filtered)
+    },[]) 
+
+    const selectFlight = (value) =>{
+        localStorage.setItem("selectedFlight", JSON.stringify(value))
+        navigate("/passenger")
+    }
     const navigate = useNavigate()
     const [initLoading, setInitLoading] = useState(true);
     const [loading, setLoading] = useState(false);
@@ -135,35 +149,35 @@ const BooksFlight = () =>{
     const [list1, setList1] = useState([]);
     useEffect(()=>{
         setInitLoading(false);
-        setData1(DummyData.slice(0, count))
-        setList1(DummyData.slice(0, count))
+        setData1(flight.slice(0, count))
+        setList1(flight.slice(0, count))
     },[])
     const onLoadMore = () => {
         setLoading(true);
         console.log("Before increment: count = " + count);
-        if (DummyData.length >= count + 3) {
+        if (flight.length >= count + 3) {
             count += 3;
             console.log("After increment: count = " + count);
-            setData1(DummyData.slice(0, count))
-            setList1(DummyData.slice(0,count))
+            setData1(flight.slice(0, count))
+            setList1(flight.slice(0,count))
         
         }else{
-            count = DummyData.length
+            count = flight.length
             console.log("After increment in Else: count = " + count);
-            setData1(DummyData.slice(0, count))
-            setList1(DummyData.slice(0,count))
+            setData1(flight.slice(0, count))
+            setList1(flight.slice(0,count))
         }
         console.log("Initial count: count = " + count);
         console.log("Initial length: length = " + data1.length, list1.length);
         setTimeout(()=>{
-            DummyData.forEach(obj =>{
+            flight.forEach(obj =>{
                 obj.loading = false
             })
-            setData1(DummyData.slice(0, count))
-            setList1(DummyData.slice(0,count))
+            setData1(flight.slice(0, count))
+            setList1(flight.slice(0,count))
             setLoading(false)
         },1000)
-        DummyData.forEach(obj =>{
+        flight.forEach(obj =>{
             obj.loading = true
         })
        
@@ -219,67 +233,59 @@ const BooksFlight = () =>{
                             style={{width:'auto'}}
                         >
                             <div className='flightId'>
-                                Flight id: 
+                                Flight id: {item.flight_number}
                             </div>
                             <div className='rowinsidecard'>
                                 <div className='going'>
-                                    Going :
+                                    Going  
                                 </div>
                                 <div className='date'>
                                     Date :
                                     <div className='insideDate'>
-                                        dada
+                                        {item.arrival_time}
                                     </div>
                                 </div>
                                 <div className='takeoff'>
                                     Take off :
                                     <div  className='insideTakeoff'>
-                                            dadadad
+                                        {item.departure_airport}
                                     </div>
                                 </div>
                                 <div className='landing'>
                                     Landing :
                                     <div  className='insideLanding'>
-                                            dadadad
-                                    </div>
-                                </div>
-                                <div className='flightHour'>
-                                    Flight Hours :
-                                    <div  className='insideFlightHour'>
+                                        {item.arrival_airport}
                                     </div>
                                 </div>
                             </div>
                             <div className='rowinsidecard'>
                                 <div className='going'>
-                                    Goingฺ back :
+                                    Goingฺ back 
                                 </div>
                                 <div className='date'>
                                     Date :
                                     <div className='insideDate'>
-                                        dada
+                                        {item.back_time}
                                     </div>
                                 </div>
                                 <div className='takeoff'>
                                     Take off :
                                     <div  className='insideTakeoff'>
-                                            dadadad
+                                    {item.back_airport} 
                                     </div>
                                 </div>
                                 <div className='landing'>
                                     Landing :
                                     <div  className='insideLanding'>
-                                            dadadad
+                                       
+                                        {item.back_desairport}  
                                     </div>
                                 </div>
-                                <div className='flightHour'>
-                                    Flight Hours :
-                                    <div  className='insideFlightHour'>
-                                    </div>
-                                </div>
+                                
                             </div>
                             <div className='button'>
                                 <Button
-                                    onClick={()=>navigate("/passenger")}
+                                    onClick={()=>selectFlight(item)}
                                     style={{backgroundColor:'#60B564', color:'white'}}
                                 >Order</Button>
                             </div>

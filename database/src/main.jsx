@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
+import { DataProvider } from './views/Datacontext';
 import Home from './views/home'
 import BooksFlight from './views/booksfligh'
 import './index.css'
@@ -62,6 +63,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <DataProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </DataProvider>
   </React.StrictMode>,
 )
