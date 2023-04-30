@@ -1,26 +1,53 @@
-.hotdeal{
-    height: 35vh;
-    background: transparent;
-    margin-bottom: 10vh;
+html,body{
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.meal_header{
+   
 }
 .containerT{
-    padding: 5vh;
-    width: 170vh;
-    height: 80vh;
-    background-color: #FE8E68;
+    width: 100vw;
+    height: 100%;
+    background-color: #FCC8D1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .title{
+    position: relative;
+    top:2vw;
+    left:1vw;
     padding-left: 50px;
+    margin-bottom: 2vw;
     background-color: #FF7A8B;
-    height: 5vh;
+    width: 20%;
     display: flex;
-    align-items: center;
     font-weight: bold;
     font-size: 1.5rem;
     border-radius: 10px;
 }
 .listCard{
+    position: relative;
+    margin: 2vw;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    background: #FEF2F4;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    width: 250;
+    height: 300;
+    margin: 2vh;
+}
+.grid-column{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
 }

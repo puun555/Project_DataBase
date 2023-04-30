@@ -1,6 +1,7 @@
 import '../views/booksflight.css'
 import { Avatar, Button, Card, List, Skeleton } from 'antd';
 import { useEffect, useState } from 'react';
+import Navbar from '../views/navbar';
 let count = 3;
 
 import { useNavigate } from 'react-router-dom'
@@ -177,11 +178,19 @@ const BooksFlight = () =>{
           lineHeight: '32px',
         }}
       >
-        <Button onClick={onLoadMore}>loading more</Button>
+        <Button className="flight-button" onClick={onLoadMore}>loading more</Button>
       </div>
     ) : null;
     return(
         <>
+        <Navbar></Navbar>
+        <div className="selectSeat-header" style={{background:'#FFABAB'}}>
+                <div className="selectSeat-header-left"  onClick={()=>navigate('/home')}>
+                    <img src={"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Back_Arrow.svg/1200px-Back_Arrow.svg.png"} alt="." style={{width:'2vw',height: '2vw',left:"2vw"}}
+                    ></img>
+                    <h3>Home</h3>
+                </div>
+            </div>
         <div className='showFlight'>
             <div className='titleFlight'>
                 เลือกเที่ยวบิน

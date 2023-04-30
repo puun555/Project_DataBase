@@ -1,7 +1,7 @@
 .rowinsidecard{
     display: flex;
     justify-content: space-between;
-    width: 158vh;
+    
     margin: 1vh;
     background-color: #F2F2F2;
     padding: 1vh;
@@ -14,8 +14,8 @@
 }
 .titleFlight{
     display: flex;
-    width: 170vh;
-    background-color: white;
+    width: 100%;
+    background-color: #FEF2F4;
     font-weight: bold;
     color: black;
     height: 5vh;
@@ -23,15 +23,20 @@
     justify-content: center;
 }
 .showFlight{
-    width: 170vh;
-    background-color: #FE8E68 !important;
+    width: 100%;
+    height: 100%;
+    background-color: #FFABAB !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .going{
     padding: 10px;
     display: flex;
     width: 25vh;
     height: 3vh;
-    background-color: #FE8E68;
+    background-color: #FFABAB;
     border-radius: 10px;
     align-items: center;
 
@@ -96,4 +101,8 @@
     display: flex;
    justify-content: end;
    margin-right: 1vh;
+}
+.flight-button{
+    width: 10vw;
+   
 }
