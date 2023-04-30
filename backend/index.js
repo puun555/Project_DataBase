@@ -10,7 +10,7 @@ const connection = mysql.createConnection({
     host : 'localhost',
     user : 'root',
     password : '123456',
-    database: 'test'
+    database: 'project_d'
 });
 
 connection.connect((err)=>{
@@ -18,11 +18,11 @@ connection.connect((err)=>{
     console.log('connected to database')
 });
 
-app.get('/read', async (req,res)=>{
-    const {id, firstName, lastName} = req.body
+app.get('/flight', async (req,res)=>{
+    const {flight_number, departure_airport, arrival_airport, departure_time, arrival_time} = req.body
     try {
-        connection.query(`SELECT * FROM project_d.airport;`,
-        [id, firstName, lastName], 
+        connection.query(`SELECT * FROM flight;`,
+        [flight_number, departure_airport, arrival_airport, departure_time, arrival_time], 
         (err, result, field)=>{
             if(err) {
                 console.log(err); 
@@ -35,6 +35,44 @@ app.get('/read', async (req,res)=>{
         return res.status(500).send('server error')
     }
 })
+
+
+app.get('/meal', async (req,res)=>{
+    const {meal_id, meal_name} = req.body
+    try {
+        connection.query(`SELECT * FROM customers;`,
+        [meal_id, meal_name], 
+        (err, result, field)=>{
+            if(err) {
+                console.log(err); 
+                return res.status(400).send();
+            }
+            return res.status(200).send(result);
+        })
+    } catch (error) {
+        console.log(error)
+        return res.status(500).send('server error')
+    }
+})
+
+app.get('/order', async (req,res)=>{
+    const {order_id, order} = req.body
+    try {
+        connection.query(`SELECT * FROM customers;`,
+        [order_id, order], 
+        (err, result, field)=>{
+            if(err) {
+                console.log(err); 
+                return res.status(400).send();
+            }
+            return res.status(200).send(result);
+        })
+    } catch (error) {
+        console.log(error)
+        return res.status(500).send('server error')
+    }
+})
+
 
 app.post('/create', async (req,res)=>{
     const {id, firstName, lastName} = req.body
