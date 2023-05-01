@@ -11,7 +11,7 @@ const Login =()=>{
     const onFinish = (values) => {
         if(email == localStorage.getItem("Email") && password == localStorage.getItem("Password")){
             navigate("/home")
-            alert("Enjoy Your Flight")
+            alert("Welcome to Gearity Airline")
             
         }else{
             onFinishFailed();

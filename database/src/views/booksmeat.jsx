@@ -23,11 +23,17 @@ const Meat = ()=>{
         },
         {
             id:"4",
-            title:"กะเพราหมูสับ",
-            img: "https://i.pinimg.com/originals/df/f9/30/dff930b4519724241c42286477d2e61d.jpg"
+            title:"ข้าวไข่เจียว",
+            img: "https://s359.kapook.com/r/600/auto/pagebuilder/1c0a0dac-e4a9-4651-baa0-052a597ab7bf.jpg"
+        },
+        {
+            id:"5",
+            title:"พริกแกงไก่",
+            img: "https://www.cpbrandsite.com/contents/recipe/6uhszozeqg6nyayc8ubr2wcnwpsycq14niojoq8a.png"
         },
        
     ]
+    
     return (
         <>
             <Navbar></Navbar>
@@ -48,11 +54,12 @@ const Meat = ()=>{
                             {
                                 meal_list.map((e)=>(
                                     <Card className="card"
-                                        onClick={()=>navigate('/summary')}
+                                    onClick={()=>{localStorage.setItem("Meal_ID",JSON.stringify(e));navigate('/summary')}}
                                         hoverable
                                     cover={<img alt="example" src={e.img} style={{height:200, width: 230, margin:10}} />}
                                     >   
                                         <Meta title={e.title} description="www.instagram.com" />
+                                    
                                     </Card>
                                 ))
                             }
@@ -67,7 +74,7 @@ const Meat = ()=>{
                             {
                                 meal_list.map((e)=>(
                                     <Card
-                                        onClick={()=>navigate('/summary')}
+                                    onClick={()=>{localStorage.setItem("Meal_ID",JSON.stringify(e));navigate('/summary')}}
                                         hoverable
                                         style={{
                                         width: 250,

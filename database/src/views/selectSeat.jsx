@@ -8,128 +8,128 @@ const SelectSeat = ()=>{
     const data_1 = [
         {
             id:"A1",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"A2",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"A3",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"A4",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"A5",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"A6",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         }
     ]
     const data_2 = [
         {
             id:"B1",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"B2",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"B3",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"B4",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"B5",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"B6",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         }
     ]
     const data_3 = [
         {
             id:"C1",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"C2",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"C3",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"C4",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"C5",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"C6",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         }
     ]
     const data_4 = [
         {
             id:"D1",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"D2",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"D3",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"D4",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"D5",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         },
         {
             id:"D6",
-            cost:"20",
+            cost:"2000",
             isSelect:false
         }
     ]
@@ -144,6 +144,7 @@ const SelectSeat = ()=>{
         setUpdate(!update)
         setSeat_id(e.id)
         setCost(e.cost)
+        localStorage.setItem("Seat_ID", seat_id);
         localStorage.setItem("ListItem_A", JSON.stringify(data_1))
         localStorage.setItem("ListItem_B", JSON.stringify(data_2))
         localStorage.setItem("ListItem_C", JSON.stringify(data_3))
